@@ -58,7 +58,7 @@ Controlling over the lamp functions is orgininaly done by pushing some small but
 First it dims down and than it goes up higher on the same steps
 
 ```mermaid
-  graph LR;
+  graph TD;
     1[100%]-->2[90%];
     2-->3[80%];
     3-->4[70%];
