@@ -19,9 +19,26 @@ This repository is used to host config and build instructions of a DIY [ESPHome]
 
 - Some basic wires with female and male connectors
 
-## Device assembly
+##  Connection tables
 
-Can be seen on the pictures visible bellow.
+Bellow you'll find connection tables describing the cable connections between the lamp, Waveshare board itself and the analog moisture sensor.
+
+### Table 1: Moisture sensor - Waveshare board
+
+| Connection Id | Sensor Pin | Board Pin |
+|---------------|------------|-----------|
+| 1             | VCC        | 3V3       |
+| 2             | GND        | GND       |
+| 3             | SIG        | GP6       |
+
+### Table 2: Lamp contrrol board - Waveshare board
+
+| Connection Id | Lamp switch control pad | Board Pin |
+|---------------|-------------------------|-----------|
+| 1             | ON / OFF                | GP1       |
+| 2             | Timer                   | GP2       |
+| 3             | Color                   | GP4       |
+| 4             | Light intensity         | GP5       |
 
 ## Lamp control logic
 
