@@ -23,14 +23,14 @@ This repository is used to host config and build instructions of a DIY [ESPHome]
 
 Can be seen on the pictures visible bellow.
 
-## Light control logic
+## Lamp control logic
 
 Controlling over the lamp functions is orgininaly done by pushing some small button. Each push changes states of a function withing a closed set of values organised in looped sequences. You can see them on the diagrams visible bellow.
 
+### Light
+
 ```mermaid
   graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+      On -- > Off;
+      Off -- > On;
 ```
