@@ -31,6 +31,50 @@ Controlling over the lamp functions is orgininaly done by pushing some small but
 
 ```mermaid
   graph TD;
-      On -- > Off;
-      Off -- > On;
+      A[On]-->B[Off];
+      B-->A;
+```
+
+### Light color
+
+```mermaid
+  graph TD;
+      A[Full spectrum]-->B[Red + Blue];
+      B-->C[Neutral white];
+      C-->A;
+```
+
+### Timer mode
+
+```mermaid
+  graph TD;
+      A[3 h on, 21 h off]-->B[9 h on, 15 h off];
+      B-->C[12 h on, 12 h off];
+      C-->A;
+```
+
+### Light intensity
+
+First it dims down and than it goes up higher on the same steps
+
+```mermaid
+  graph LR;
+    1[100%]-->2[90%];
+    2-->3[80%];
+    3-->4[70%];
+    4-->5[60%];
+    5-->6[50%];
+    6-->7[40%];
+    7-->8[30%];
+    8-->9[20%];
+    9-->10[0%];
+    10-.->9
+    9-.->8
+    8-.->7
+    7-.->6
+    6-.->5
+    5-.->4
+    4-.->3
+    3-.->2
+    2-.->1              
 ```
