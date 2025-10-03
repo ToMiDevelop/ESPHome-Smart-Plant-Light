@@ -1,5 +1,7 @@
 # ESPHome-Smart-Plant-Light
 
+![Head picture](./pics/head1.png)
+
 ## Short description
 
 This repository is used to host config and build instructions of a DIY [ESPHome](https://esphome.io/) smart plant light with soil moisture level sensor. The purpose is to have theability to
@@ -19,6 +21,10 @@ This repository is used to host config and build instructions of a DIY [ESPHome]
 
 - Some basic wires with female and male connectors
 
+## ESPHome yaml
+
+The final device logic is described in [this](./yamls/ESP32S_Smart_Plant_Light_v_final_1.yaml) yaml file (available also in **yamls** folder). Please use it with the [ESPHome CLI](https://esphome.io/guides/cli/) to compile and flash the firmware to the Waveshare board. Alternatively you can use the offcial [Home Assistant addon](https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon) to proepare the firmware from the yaml file and flash it using [ESPHome web](https://web.esphome.io/).
+
 ##  Connection tables
 
 Bellow you'll find connection tables describing the cable connections between the lamp, Waveshare board itself and the analog moisture sensor.
@@ -27,18 +33,30 @@ Bellow you'll find connection tables describing the cable connections between th
 
 | Connection Id | Sensor Pin | Board Pin |
 |---------------|------------|-----------|
-| 1             | VCC        | 3V3       |
-| 2             | GND        | GND       |
-| 3             | SIG        | GP6       |
+| 1.1           | VCC        | 3V3       |
+| 1.2           | GND        | GND       |
+| 1.3           | SIG        | GP6       |
 
 ### Table 2: Lamp contrrol board - Waveshare board
 
 | Connection Id | Lamp switch control pad | Board Pin |
 |---------------|-------------------------|-----------|
-| 1             | ON / OFF                | GP1       |
-| 2             | Timer                   | GP2       |
-| 3             | Color                   | GP4       |
-| 4             | Light intensity         | GP5       |
+| 2.1           | ON / OFF                | GP1       |
+| 2.2           | Timer                   | GP2       |
+| 2.3           | Color                   | GP4       |
+| 2.4           | Light intensity         | GP5       |
+
+## Figuring which switch Pin / foot / solder pad is the control one
+
+In the whole series of generic plant lights sold by big chinese wholesales there is on use just one type of control pilot attached to the electric cable. Exactly the one from the picture bellow.
+
+![Pilot](./pics/pilot.png)
+
+You can easily take the plastic enclosure off and then you'll see a board witch tact switches on one side, like on the picture bellow.
+
+![Lamp control board](./pics/lamp_board.jpg)
+
+On the left anf right side of the switches description (SW1, SW2, SW3, SW4) you can see solder pads (to which the switch itself is soldered). After plugging in th lamp's usb connector to the power source you can test which are the ones used to control the device. Just touch 'em with a GND wire, if an actions is done (for example light turns on or off) then this is the contorol pad. And this chosen pad should be used to solder a wire which will be then connected do the Waveshare board - in accordance with the connection table.
 
 ## Lamp control logic
 
@@ -95,3 +113,9 @@ First it dims down and than it goes up higher on the same steps
     3-.->2
     2-.->1              
 ```
+
+## Final result
+
+In my case the final result looks like bellow.
+
+![Final result picture](./pics/head2.png)
