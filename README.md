@@ -23,7 +23,17 @@ This repository is used to host config and build instructions of a DIY [ESPHome]
 
 ## ESPHome yaml
 
-The final device logic is described in [this](./yamls/ESP32S_Smart_Plant_Light_v_final_1.yaml) yaml file (available also in **yamls** folder). Please use it with the [ESPHome CLI](https://esphome.io/guides/cli/) to compile and flash the firmware to the Waveshare board. Alternatively you can use the official [Home Assistant addon](https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon) to prepare the firmware from the yaml file and flash it using [ESPHome web](https://web.esphome.io/).
+The final device logic is described in a simple **yaml** file - all it's versions are available in the **yamls** folder. Please use it with the [ESPHome CLI](https://esphome.io/guides/cli/) to compile and flash the firmware to the Waveshare board. Alternatively you can use the official [Home Assistant addon](https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon) to prepare the firmware from the yaml file and flash it using [ESPHome web](https://web.esphome.io/).
+
+There are 2 language versions for the yaml configuration:
+- **en** prefix in the file name points the english version of entities and states names,
+- **pl** prefix in the file name points the polish version of entities and states names.
+
+Choose the one which suits your preferences.
+
+I'm also open to any contributions in this field - if you want to create another language version just clone my repository, in **dev branch** add the desired file with a name corresponding the schema from version 2 (the **v_final_2** suffix) and create a pull request to the **dev** branch in my repository.
+
+If you're unsure which yaml version is best for you the download the desired language version from the latest release.
 
 ##  Connection tables
 
