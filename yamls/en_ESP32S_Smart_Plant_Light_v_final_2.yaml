@@ -1,6 +1,6 @@
 esphome:
-  name: smart-plant-light-esp32s
-  friendly_name: Smart plant light
+  name: smart-plant-light-esp32s-en
+  friendly_name: Smart plant light EN
   on_boot:
   # Action 1: Setting initial pin states
   - priority: 1000.0 
@@ -20,12 +20,12 @@ esphome:
       # Timer off
       - globals.set: {id: mode_state, value: '0'}
       - logger.log: "Hardware timer off"
-      - text_sensor.template.publish: {id: Mode_timing_sensor, state: !lambda 'return std::string("Wyłączony");'}
+      - text_sensor.template.publish: {id: Mode_timing_sensor, state: !lambda 'return std::string("Off");'}
       
       # Color full spectrum
       - globals.set: {id: color_state, value: '1'}
       - logger.log: "Full spectrum color mode"
-      - text_sensor.template.publish: {id: color_mode_sensor, state: !lambda 'return std::string("Pełne spektrum");'}
+      - text_sensor.template.publish: {id: color_mode_sensor, state: !lambda 'return std::string("Full spectrum");'}
 
       # Intensity 100%
       - globals.set: {id: intensity_state_now, value: '10'}
@@ -60,11 +60,10 @@ ota:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-
-# Enable fallback hotspot (captive portal) in case wifi connection fails
-ap:
-  ssid: "Smart Plant Light"
-  password: "123456789"
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Smart Plant Light"
+    password: "123456789"
 
 # Allow web server
 # web_server:
