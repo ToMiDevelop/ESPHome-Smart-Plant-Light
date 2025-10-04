@@ -4,7 +4,7 @@
 
 ## Short description
 
-This repository is used to host config and build instructions of a DIY [ESPHome](https://esphome.io/) smart plant light with soil moisture level sensor. The purpose is to have the ability to
+This repository is used to host config and build instructions of a DIY [ESPHome](https://esphome.io/) smart plant light with soil moisture level sensor. The purpose is to have theability to
 1) control moisture level, 
 2) remote control of the plant light,
 3) from within your local [Home Assistant](https://www.home-assistant.io/) instance.
@@ -23,7 +23,7 @@ This repository is used to host config and build instructions of a DIY [ESPHome]
 
 ## ESPHome yaml
 
-The final device logic is described in [this](./yamls/ESP32S_Smart_Plant_Light_v_final_1.yaml) yaml file (available also in **yamls** folder). Please use it with the [ESPHome CLI](https://esphome.io/guides/cli/) to compile and flash the firmware to the Waveshare board. Alternatively you can use the official [Home Assistant addon](https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon) to prepare the firmware from the yaml file and flash it using [ESPHome web](https://web.esphome.io/).
+The final device logic is described in [this](./yamls/ESP32S_Smart_Plant_Light_v_final_1.yaml) yaml file (available also in **yamls** folder). Please use it with the [ESPHome CLI](https://esphome.io/guides/cli/) to compile and flash the firmware to the Waveshare board. Alternatively you can use the offcial [Home Assistant addon](https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon) to proepare the firmware from the yaml file and flash it using [ESPHome web](https://web.esphome.io/).
 
 ##  Connection tables
 
@@ -37,7 +37,7 @@ Bellow you'll find connection tables describing the cable connections between th
 | 1.2           | GND        | GND       |
 | 1.3           | SIG        | GP6       |
 
-### Table 2: Lamp control board - Waveshare board
+### Table 2: Lamp contrrol board - Waveshare board
 
 | Connection Id | Lamp switch control pad | Board Pin |
 |---------------|-------------------------|-----------|
@@ -56,11 +56,11 @@ You can easily take the plastic enclosure off and then you'll see a board witch 
 
 ![Lamp control board](./pics/lamp_board.jpg)
 
-On the left anf right side of the switches description (SW1, SW2, SW3, SW4) you can see solder pads (to which the switch itself is soldered). After plugging in th lamp's usb connector to the power source you can test which are the ones used to control the device. Just touch 'em with a GND wire, if an actions is done (for example light turns on or off) then this is the control pad. And this chosen pad should be used to solder a wire which will be then connected do the Waveshare board - in accordance with the connection table.
+On the left anf right side of the switches description (SW1, SW2, SW3, SW4) you can see solder pads (to which the switch itself is soldered). After plugging in th lamp's usb connector to the power source you can test which are the ones used to control the device. Just touch 'em with a GND wire, if an actions is done (for example light turns on or off) then this is the contorol pad. And this chosen pad should be used to solder a wire which will be then connected do the Waveshare board - in accordance with the connection table.
 
 ## Lamp control logic
 
-Controlling over the lamp functions is physically done by pushing small button. Each push changes states of a function withing a closed set of values organized in looped sequences. You can see them on the diagrams visible bellow.
+Controlling over the lamp functions is orgininaly done by pushing some small button. Each push changes states of a function withing a closed set of values organised in looped sequences. You can see them on the diagrams visible bellow.
 
 ### Light
 
